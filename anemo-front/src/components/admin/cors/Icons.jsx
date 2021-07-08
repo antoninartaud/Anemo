@@ -1,10 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaTrashAlt, FaEdit } from 'react-icons/fa';
 
-function Icons() {
+function Icons(props) {
+  console.log('props.questionId dans Icons= questionId', props.questionId);
+  console.log('props dans Icons', props);
+
+  const id = props.questionId;
+
   return (
-    <div>
-      <h4>salut from icons.jsx</h4>
-    </div>
+    <>
+      <Link to={`/edit/${id}`}>
+        <FaEdit />
+      </Link>
+
+      <FaTrashAlt onClick={() => props.onClick(id)} />
+    </>
   );
 }
 
