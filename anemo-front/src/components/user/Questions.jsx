@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getQuestions } from '../../utils/network';
+import { getQuestions, postReponse } from '../../utils/network';
 import Response from './Response';
 
 const Questions = () => {
@@ -11,23 +11,35 @@ const Questions = () => {
 
     const onChangeResponse = (questionId, responseValue) => {
 
-        const newResponses = [...responses, { responseValue, questionId, userId }]
+        const newFilterResponses = responses.filter((elem)=>{
+            return elem.questionId !== questionId
+
+        })
+        const newResponses = [...newFilterResponses, { responseValue, questionId, userId }]
+
 
         console.log(newResponses)
-
+        
         setResponses(
             newResponses
         )
+        const validation = newResponses.findIndex(elem => {
+           return elem.questionId
+
+        })
+        console.log("validation",validation)
+
     }
 
     console.log("response set", responses)
 
     const postSend = async () => {
         try {
-            
+            const listResponse = await postReponse(responses)
+            console.log(listResponse)
         } catch (error) {
             console.error(error)
-            
+
         }
 
     }
@@ -65,7 +77,7 @@ const Questions = () => {
                     )
                 })}
             </ul>
-
+            <button onClick={postSend}>save</button>
 
 
         </div>
