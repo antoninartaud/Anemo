@@ -25,16 +25,17 @@ export default function App() {
 
         setTimeout(() => setInformDisconnection(false), 10000)
     }
-   
+
 
     return (
         <BrowserRouter>
             <div>
                 <Link to="/">Signup</Link>
                 <Link to="/login">Login</Link>
-                <Link to="/user" >User</Link>
+                <Link to="/user" ></Link>
+                <Link to="/admin"></Link>
                 <li className="nav-item">
-                    <a href="#" className="nav-link" onClick={logout}>Logout</a>
+                    <a href="/" className="nav-link" onClick={logout}>Logout</a>
                 </li>
 
             </div>
@@ -44,6 +45,8 @@ export default function App() {
                     <Login changeUserConnected={setUserConnected}></Login>
                 </Route>
                 <Route path="/user" exact component={UserPage}></Route>
+                <Route path="/admin" exact component={Admin}></Route>
+
 
 
 

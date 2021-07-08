@@ -19,8 +19,6 @@ export default function Response(props) {
 
     return (
         <div>
-
-
             <div className="form-check form-check-inline">
                 <input className="form-check-input" type="radio" name={props.questionsId} style={{ marginRight: "30px" }} id="inlineRadio1" value="1" onClick={(handleChange)} />
                 <label className="form-check-label" for="inlineRadio1"></label>

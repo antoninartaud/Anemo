@@ -3,19 +3,26 @@ import Questions from '../components/user/Questions'
 import { useHistory } from 'react-router-dom'
 
 export default function UserPage() {
+    const [finishCq, setFinishCq] = useState(false)
+
     let history = useHistory()
     useEffect(() => {
         const token = localStorage.getItem("token") || false
-        console.log("token", token)
-        if (!token) {
+         if (!token) {
             history.push("/")
             return
         }
     }, [])
-    return (
-        <div>
-        <Questions/>
-        </div>
 
-    )
+    if (finishCq === false) {
+        return (
+            <div>
+                <Questions finishCq={setFinishCq} />
+            </div>
+
+        )
+    } else {
+        return ("thank you for your responses")
+    }
+
 }

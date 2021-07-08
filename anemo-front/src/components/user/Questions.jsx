@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { getQuestions, postReponse } from '../../utils/network';
 import Response from './Response';
 
-const Questions = () => {
+const Questions = (props) => {
 
     const [questions, setQuestions] = useState([])
     const [responses, setResponses] = useState([])
     const [userId, setUserId] = useState("")
+    const [errors, setErrors] = useState([])
 
 
     const onChangeResponse = (questionId, responseValue) => {
 
-        const newFilterResponses = responses.filter((elem)=>{
+        const newFilterResponses = responses.filter((elem) => {
             return elem.questionId !== questionId
 
         })
@@ -19,24 +20,28 @@ const Questions = () => {
 
 
         console.log(newResponses)
-        
+
         setResponses(
             newResponses
         )
-        const validation = newResponses.findIndex(elem => {
-           return elem.questionId
 
-        })
-        console.log("validation",validation)
+
 
     }
 
+    console.log("props", props)
     console.log("response set", responses)
 
     const postSend = async () => {
         try {
-            const listResponse = await postReponse(responses)
-            console.log(listResponse)
+            if (responses.length === 10) {
+                const listResponse = await postReponse(responses)
+                console.log(listResponse)
+                props.finishCq(true)
+            } else {
+                setErrors([  "    vous n'avez pas fini de repondre à toute les questions"])
+            }
+
         } catch (error) {
             console.error(error)
 
@@ -63,25 +68,69 @@ const Questions = () => {
     }, []);
 
     console.log("question", questions)
-    return (
-
-        <div>
-            <ul>
-                {questions.map((elem) => {
-                    return (
-                        <div>
-                            <li>{elem.questionText}</li>
-                            <Response questionsId={elem._id} onChange={onChangeResponse} />
-                        </div>
-
-                    )
-                })}
-            </ul>
-            <button onClick={postSend}>save</button>
+    console.log("errors", errors)
 
 
-        </div>
-    )
+    if (errors.length === 0) {
+        return (
+
+            <div>
+
+                <ul>
+                    {questions.map((elem) => {
+                        return (
+                            <div>
+                                <li>{elem.questionText}</li>
+                                <Response questionsId={elem._id} onChange={onChangeResponse} />
+                            </div>
+
+                        )
+                    })}
+                </ul>
+                <button onClick={postSend}>save</button>
+
+
+            </div>
+        )
+    } else {
+        return (
+
+            <>
+            <div className="row">
+                <div className="offset-3 col-6 mx-auto">
+                    {
+                        errors.map(elem => {
+                            return (
+                                <div className="alert alert-danger" role="alert">
+                                    {elem}
+                                </div>
+                            )
+                        })
+                    }
+                </div> 
+                
+            </div>
+            <div>
+                 <ul>
+                    {questions.map((elem) => {
+                        return (
+                            <div>
+                                <li>{elem.questionText}</li>
+                                <Response questionsId={elem._id} onChange={onChangeResponse} />
+                            </div>
+
+                        )
+                    })}
+                </ul>
+                <button onClick={postSend}>save</button>
+
+            </div>
+               
+           </>
+        )
+    }
+
+
 
 
 

@@ -20,9 +20,15 @@ export default function Signup() {
 
     useEffect(() => {
         const token = localStorage.getItem("token") || false
+        const roleUser = localStorage.getItem("role") || false
 
         if (token) {
-            history.push("/user")
+            if (roleUser === "0") {
+                history.push("/user")
+            }else{
+                history.push("/admin")
+            }
+
         }
     }, [])
 
