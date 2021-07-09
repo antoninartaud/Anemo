@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Link, Switch, useHistory } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Admin from './views/Admin';
 import Add from './views/Add';
 import Edit from './views/Edit';
