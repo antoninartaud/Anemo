@@ -45,7 +45,8 @@ export const addQuestion = async (body) => {
 
 export const deleteQuestion = async (id) => {
   try {
-    await axios.delete(`${API_URL}/${id}`);
+    const response = await axios.delete(`${API_URL}/${id}`);
+    return response.data;
   } catch (error) {
     console.error(error);
     return false;

@@ -6,10 +6,12 @@ import Questions from './cors/Questions';
 function List() {
   const [questions, setQuestions] = useState([]);
 
+  //display Confirmation deleted question and store the question ID
+  const [confirmationId, setConfirmationId] = useState('');
+
   useEffect(async () => {
     try {
       const responseArrayQuestions = await getQuestionList();
-      // console.log('responseArrayQuestions', responseArrayQuestions);
       if (responseArrayQuestions) {
         setQuestions(responseArrayQuestions);
       } else {
@@ -19,31 +21,52 @@ function List() {
       alert('There was a problem');
     }
   }, []);
-  console.log('questions', questions);
 
-  const handleClick = (id) => {
-    deleteQuestion(id);
+  const handleClickDeleteRequest = async (id) => {
+    try {
+      await deleteQuestion(id);
+      setConfirmationId('');
+      const responseArrayQuestions = await getQuestionList();
+      setQuestions(responseArrayQuestions);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const renderConfirmation = () => {
+    return (
+      <>
+        <h4>Confirmation render</h4>
+        <button onClick={() => handleClickDeleteRequest(confirmationId)}>
+          OUI
+        </button>
+        <button onClick={() => setConfirmationId('')}>NON</button>
+      </>
+    );
   };
 
   return (
     <>
       <div className='container'>
-        <h4>Liste des Questions</h4>
-
-        <div className='row'>
-          <div>
-            {questions.map((elem, index) => (
-              <div>
-                <Questions question={elem} />
-                <Icons questionId={elem._id} onClick={handleClick} />
-              </div>
-            ))}
+        {confirmationId ? (
+          renderConfirmation()
+        ) : (
+          <div className='row'>
+            <div>
+              {questions.map((elem, index) => (
+                <div>
+                  <Questions question={elem} />
+                  <Icons
+                    questionId={elem._id}
+                    onConfirm={handleClickDeleteRequest}
+                    onChange={setConfirmationId}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
-      {/* <div>
-        <h4>salut from questions.jsx</h4>
-      </div> */}
     </>
   );
 }

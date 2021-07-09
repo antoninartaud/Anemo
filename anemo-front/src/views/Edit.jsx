@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { getQuestion, updateQuestion } from '../utils/network';
 
 function Edit() {
-  //TODO QUESTiON/newQuestion CHANGER NOM selon type OBJET/STRING
   const [question, setQuestion] = useState({});
   const [newQuestion, setNewQuestion] = useState('');
+
+  const history = useHistory();
 
   const handleQuestionInputChange = (e) => {
     setNewQuestion(e.target.value);
@@ -30,15 +31,11 @@ function Edit() {
     }
   }, []);
 
-  console.log('question state in Edit', question);
-  console.log('question state type in Edit', typeof question);
-  console.log('newquestion state in Edit', newQuestion);
-  console.log('newquestion state type in Edit', typeof newQuestion);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await updateQuestion(id, { questionText: newQuestion });
+      history.push('/admin');
     } catch (error) {
       alert('There was a problem in handleSubmit');
     }
@@ -56,10 +53,8 @@ function Edit() {
             type='text'
             placeholder='Question'
             name='questionText'
-            //TODO Condition si question objet vide si oui affiche rien sinon affiche question
             value={newQuestion}
             // value={Object.keys(question).length === 0 ? null : newQuestion}
-            //TODO vérifier on change sans arrow fonction
             onChange={(e) => handleQuestionInputChange(e)}
           ></textarea>
 
