@@ -39,7 +39,7 @@ const Questions = (props) => {
                 console.log(listResponse)
                 props.finishCq(true)
             } else {
-                setErrors([  "    vous n'avez pas fini de repondre à toute les questions"])
+                setErrors(["    vous n'avez pas fini de repondre à toute les questions"])
             }
 
         } catch (error) {
@@ -74,59 +74,76 @@ const Questions = (props) => {
     if (errors.length === 0) {
         return (
 
+
             <div>
+                <h1 style={{ textAlign: 'center', marginTop: '5px', fontFamily: 'fantasy' }}> CQ TEST</h1>
+                <div >
+                    <ul>
+                        <div style={{ listStyle: 'none', textAlign: "center", marginTop: '10px' }}>
+                            {questions.map((elem) => {
+                                return (
 
-                <ul>
-                    {questions.map((elem) => {
-                        return (
-                            <div>
-                                <li>{elem.questionText}</li>
-                                <Response questionsId={elem._id} onChange={onChangeResponse} />
-                            </div>
+                                    <div className="card-title">
+                                        <li>{elem.questionText}</li>
+                                        <Response questionsId={elem._id} onChange={onChangeResponse} />
+                                    </div>
 
-                        )
-                    })}
-                </ul>
-                <button onClick={postSend}>save</button>
-
+                                )
+                            })}
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button style={{ paddingLeft: '40px', paddingRight: '40px' }} class="btn btn-primary btn-lg" onClick={postSend}>save</button>
+                        </div>
+                    </ul>
+                </div>
 
             </div>
+
         )
     } else {
         return (
 
             <>
-            <div className="row">
-                <div className="offset-3 col-6 mx-auto">
-                    {
-                        errors.map(elem => {
+                <div className="row">
+                    <div className="offset-3 col-6 mx-auto">
+                        {
+                            errors.map(elem => {
+                                return (
+                                    <div className="alert alert-danger" role="alert">
+                                        {elem}
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+
+                </div>
+
+
+
+                <h1 style={{ textAlign: 'center', marginTop: '5px', fontFamily: 'fantasy' }}> CQ TEST</h1>
+                <ul>
+                    <div style={{ listStyle: 'none', textAlign: "center", marginTop: '10px' }} >
+                        {questions.map((elem) => {
                             return (
-                                <div className="alert alert-danger" role="alert">
-                                    {elem}
+                                <div style={{
+                                    listStyle: 'none', textAlign: "center", marginTop: '10px',
+                                }}>
+                                    <li>{elem.questionText}</li>
+                                    <Response questionsId={elem._id} onChange={onChangeResponse} />
                                 </div>
                             )
-                        })
-                    }
-                </div> 
-                
-            </div>
-            <div>
-                 <ul>
-                    {questions.map((elem) => {
-                        return (
-                            <div>
-                                <li>{elem.questionText}</li>
-                                <Response questionsId={elem._id} onChange={onChangeResponse} />
-                            </div>
-
-                        )
-                    })}
+                        })}
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button style={{ paddingLeft: '40px', paddingRight: '40px' }} class="btn btn-primary btn-lg" onClick={postSend}>save</button>
+                        </div>
+                    </div>
                 </ul>
-                <button onClick={postSend}>save</button>
 
-            </div>
-               
-           </>
+
+                )
+
+            </>
         )
     }
 

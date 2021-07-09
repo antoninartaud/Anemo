@@ -8,7 +8,7 @@ export default function UserPage() {
     let history = useHistory()
     useEffect(() => {
         const token = localStorage.getItem("token") || false
-         if (!token) {
+        if (!token) {
             history.push("/")
             return
         }
@@ -22,7 +22,11 @@ export default function UserPage() {
 
         )
     } else {
-        return ("thank you for your responses")
+        return (
+            < div >
+            <h1 style={{ textAlign: 'center', fontFamily: 'fantasy', marginTop: '150px' }}> Thank You For Your Answers</h1>
+            </div >
+            )
     }
 
 }
