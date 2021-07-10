@@ -35,9 +35,9 @@ const Login = (props) => {
 
 
 
-        const regexPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{4,}$/
+        const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{4,30}$/
         if (!regexPassword.test(password)) {
-            errors.push("Passwords must have at least 4 characters, 1 number, 1 upper and 1 lowercase")
+            errors.push("Passwords must have  4 characters, 1 number, 1 upper , 1 special character  and 1 lowercase")
         }
 
         return errors
