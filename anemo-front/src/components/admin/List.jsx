@@ -12,8 +12,9 @@ function List() {
   useEffect(async () => {
     try {
       const responseArrayQuestions = await getQuestionList();
+      console.log("response get question",responseArrayQuestions)
       if (responseArrayQuestions) {
-        setQuestions(responseArrayQuestions);
+        setQuestions(responseArrayQuestions.questionList);
       } else {
         alert('There was a problem in setting questions state');
       }
@@ -27,7 +28,7 @@ function List() {
       await deleteQuestion(id);
       setConfirmationId('');
       const responseArrayQuestions = await getQuestionList();
-      setQuestions(responseArrayQuestions);
+      setQuestions(responseArrayQuestions.questionList);
     } catch (error) {
       console.log(error);
     }

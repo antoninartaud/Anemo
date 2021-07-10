@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getQuestions, postReponse } from '../../utils/network';
+import { getQuestionList, getQuestions, postReponse } from '../../utils/network';
 import Response from './Response';
 
 const Questions = (props) => {
@@ -51,7 +51,7 @@ const Questions = (props) => {
 
     useEffect(async () => {
         try {
-            const responseData = await getQuestions()
+            const responseData = await getQuestionList()
             console.log("response", responseData)
 
 
