@@ -1,65 +1,94 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter, Route, Link, Switch, useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Switch,
+  useHistory,
+} from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Admin from './views/Admin';
 import Add from './views/Add';
 import Edit from './views/Edit';
-import Signup from "./views/Signup";
-import Login from "./views/Login";
-import UserPage from "./views/UserPage";
+import Signup from './views/Signup';
+import Login from './views/Login';
+import UserPage from './views/UserPage';
 
 function App() {
-    const history = useHistory()
-    const [userConnected, setUserConnected] = useState(false);
-    const [informDisconnection, setInformDisconnection] = useState(false);
+  const history = useHistory();
+  const [userConnected, setUserConnected] = useState(false);
+  const [informDisconnection, setInformDisconnection] = useState(false);
 
-    useEffect(() => {
-        const token = localStorage.getItem("token") || false
+  useEffect(() => {
+    const token = localStorage.getItem('token') || false;
 
-        if (token) {
-            setUserConnected(true)
-        }
-    }, [])
-    const logout = () => {
-        localStorage.removeItem("token")
-        setUserConnected(false)
-        setInformDisconnection(true)
-
-        setTimeout(() => setInformDisconnection(false), 10000)
+    if (token) {
+      setUserConnected(true);
     }
+  }, []);
+  const logout = () => {
+    localStorage.removeItem('token');
+    setUserConnected(false);
+    setInformDisconnection(true);
 
-    return (
-        <BrowserRouter>
-            <div className='container'>
-                <div>
-                    <Link to="/">Signup</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/user" ></Link>
-                    <Link to="/admin"></Link>
-                    <li className="nav-item">
-                        <a href="/" className="nav-link" onClick={logout}>Logout</a>
-                    </li>
+    setTimeout(() => setInformDisconnection(false), 10000);
+  };
 
-                </div>
+  return (
+    <BrowserRouter>
+      {/* FG line comment */}
+      {/* <div className='container'> */}
 
-                <Switch>
-                    <Route exact path='/admin' component={Admin} />
-                    <Route exact path='/edit/:id' component={Edit} />
-                    <Route exact path='/add' component={Add} />
-                    <Route exact path="/" >
-                        <Signup changeUserConnected={setUserConnected}></Signup>
-                    </Route>
-                    
-                    <Route exact path="/login" >
-                        <Login changeUserConnected={setUserConnected}></Login>
-                    </Route>
-                    <Route path="/user" exact component={UserPage}></Route>
+      {/* FG line comment */}
+      {/* <div> */}
+      <nav className='navbar navbar-expand-md bg-secondary navbar-dark'>
+        {/* class container to align the text inside the navbar to the grid */}
+        <div className='container'>
+          {/* class navbar-nav where all the links go */}
+          <div className='navbar-nav ms-auto'>
+            <Link className='nav-link ' to='/'>
+              Signup
+            </Link>
+            <Link className='nav-link' to='/login'>
+              Login
+            </Link>
+            <a className='nav-link' href='/' onClick={logout}>
+              Logout
+            </a>
+          </div>
+        </div>
+      </nav>
 
-                </Switch>
-            </div>
-        </BrowserRouter>
-    );
+      <Link to='/user'></Link>
+      <Link to='/admin'></Link>
+
+      {/* FG lines comment */}
+
+      {/* <li className="nav-item"> */}
+      {/* <a href='/' className='nav-link' onClick={logout}>
+            Logout
+          </a> */}
+      {/* </li> */}
+
+      <Switch>
+        <Route exact path='/admin' component={Admin} />
+        <Route exact path='/edit/:id' component={Edit} />
+        <Route exact path='/add' component={Add} />
+
+        <Route exact path='/'>
+          <Signup changeUserConnected={setUserConnected}></Signup>
+        </Route>
+        <Route path='/login'>
+          <Login changeUserConnected={setUserConnected}></Login>
+        </Route>
+        <Route path='/user' exact component={UserPage}></Route>
+      </Switch>
+
+      {/* FG line comment */}
+      {/* </div> */}
+    </BrowserRouter>
+  );
 }
 
 export default App;
