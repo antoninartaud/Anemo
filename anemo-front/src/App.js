@@ -47,8 +47,11 @@ function App() {
                     <Route exact path='/admin' component={Admin} />
                     <Route exact path='/edit/:id' component={Edit} />
                     <Route exact path='/add' component={Add} />
-                    <Route path="/" exact component={Signup}></Route>
-                    <Route path="/login" >
+                    <Route exact path="/" >
+                        <Signup changeUserConnected={setUserConnected}></Signup>
+                    </Route>
+                    
+                    <Route exact path="/login" >
                         <Login changeUserConnected={setUserConnected}></Login>
                     </Route>
                     <Route path="/user" exact component={UserPage}></Route>
