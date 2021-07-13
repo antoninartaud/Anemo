@@ -24,7 +24,7 @@ export default function Response(props) {
             id='inlineRadio1'
             value='1'
             onClick={handleChange}
-            autocomplete='off'
+            // autocomplete='off'
           />
           {/* <label className='form-check-label' for='inlineRadio1'> */}
           <label className='btn btn-outline-primary' for='inlineRadio1'>
@@ -41,7 +41,7 @@ export default function Response(props) {
             id='inlineRadio2'
             value='2'
             onChange={handleChange}
-            autocomplete='off'
+            // autocomplete='off'
           />
           {/* <label className='form-check-label' for='inlineRadio2'> */}
           <label className='btn btn-outline-primary' for='inlineRadio2'>
@@ -56,7 +56,7 @@ export default function Response(props) {
             id='inlineRadio3'
             value='3'
             onClick={handleChange}
-            autocomplete='off'
+            // autocomplete='off'
           />
           <label className='btn btn-outline-primary' for='inlineRadio3'>
             3
@@ -70,7 +70,7 @@ export default function Response(props) {
             id='inlineRadio4'
             value='4'
             onClick={handleChange}
-            autocomplete='off'
+            // autocomplete='off'
           />
           <label className='btn btn-outline-primary' for='inlineRadio4'>
             4
@@ -84,7 +84,7 @@ export default function Response(props) {
             id='inlineRadio5'
             value='5'
             onClick={handleChange}
-            autocomplete='off'
+            // autocomplete='off'
           />
           <label className='btn btn-outline-primary' for='inlineRadio5'>
             5
@@ -98,7 +98,7 @@ export default function Response(props) {
             id='inlineRadio6'
             value='6'
             onClick={handleChange}
-            autocomplete='off'
+            // autocomplete='off'
           />
           <label className='btn btn-outline-primary' for='inlineRadio6'>
             6
@@ -112,7 +112,7 @@ export default function Response(props) {
             id='inlineRadio7'
             value='7'
             onClick={handleChange}
-            autocomplete='off'
+            // autocomplete='off'
           />
           <label className='btn btn-outline-primary' for='inlineRadio7'>
             7
