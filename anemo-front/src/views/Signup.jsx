@@ -141,7 +141,7 @@ export default function Signup(props) {
         <div className='row h-100 justify-content-center border border-success border-5'>
           <div className='col-10 col-md-8 col-lg-6 border border-danger border-5 align-self-center'>
             <h1 className='text-center mt-5'>CQ Test</h1>
-            <form className='border-warning border border-5 m-5 '>
+            <div className='border-warning border border-5 m-5 '>
               <div className='form-floating'>
                 <input
                   placeholder='Name'
@@ -216,7 +216,7 @@ export default function Signup(props) {
                   create an account
                 </button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
