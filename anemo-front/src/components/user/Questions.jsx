@@ -104,7 +104,7 @@ const Questions = (props) => {
         return (
 
             <>
-                <div className="row">
+               
                     <div className="offset-3 col-6 mx-auto">
                         {
                             errors.map(elem => {
@@ -117,7 +117,7 @@ const Questions = (props) => {
                         }
                     </div>
 
-                </div>
+               
 
 
 

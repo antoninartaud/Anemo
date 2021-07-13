@@ -31,33 +31,50 @@ function App() {
 
     return (
         <BrowserRouter>
-            <div className='container'>
-                <div>
-                    <Link to="/">Signup</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/user" ></Link>
-                    <Link to="/admin"></Link>
-                    <li className="nav-item">
-                        <a href="/" className="nav-link" onClick={logout}>Logout</a>
-                    </li>
+            <nav className='navbar navbar-expand-md bg-secondary navbar-dark'>
+        {/* class container to align the text inside the navbar to the grid */}
+        <div className='container'>
+          {/* class navbar-nav where all the links go */}
+          <div className='navbar-nav ms-auto'>
+            <Link className='nav-link ' to='/'>
+              Signup
+            </Link>
+            <Link className='nav-link' to='/login'>
+              Login
+            </Link>
+            <a className='nav-link' href='/' onClick={logout}>
+              Logout
+            </a>
+          </div>
+        </div>
+      </nav>
 
-                </div>
+      <Link to='/user'></Link>
+      <Link to='/admin'></Link>
 
-                <Switch>
-                    <Route exact path='/admin' component={Admin} />
-                    <Route exact path='/edit/:id' component={Edit} />
-                    <Route exact path='/add' component={Add} />
-                    <Route exact path="/" >
-                        <Signup changeUserConnected={setUserConnected}></Signup>
-                    </Route>
-                    
-                    <Route exact path="/login" >
-                        <Login changeUserConnected={setUserConnected}></Login>
-                    </Route>
-                    <Route path="/user" exact component={UserPage}></Route>
+      {/* FG lines comment */}
 
-                </Switch>
-            </div>
+      {/* <li className="nav-item"> */}
+      {/* <a href='/' className='nav-link' onClick={logout}>
+            Logout
+          </a> */}
+      {/* </li> */}
+
+      <Switch>
+        <Route exact path='/admin' component={Admin} />
+        <Route exact path='/edit/:id' component={Edit} />
+        <Route exact path='/add' component={Add} />
+
+        <Route exact path='/'>
+          <Signup changeUserConnected={setUserConnected}></Signup>
+        </Route>
+        <Route path='/login'>
+          <Login changeUserConnected={setUserConnected}></Login>
+        </Route>
+        <Route path='/user' exact component={UserPage}></Route>
+      </Switch>
+
+
         </BrowserRouter>
     );
 }

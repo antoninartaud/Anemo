@@ -23,7 +23,7 @@ export default function Response(props) {
 
         <div>
             < div className="form-check form-check-inline">
-                <span className="px-4">Agree </span>   <input type="Agree" className="form-check-input" type="radio" name={props.questionsId} style={{ marginRight: "30px", }} id="inlineRadio1" value="1" onClick={(handleChange)} />
+                   <input type="Agree" className="form-check-input" type="radio" name={props.questionsId} style={{ marginRight: "30px", }} id="inlineRadio1" value="1" onClick={(handleChange)} />
                 <label className="form-check-label" for="inlineRadio1"> </label>
             </div>
             <div className="form-check form-check-inline">
@@ -51,7 +51,7 @@ export default function Response(props) {
             </div>
             <div className="form-check form-check-inline">
                 <input className="form-check-input" type="radio" name={props.questionsId} style={{ marginRight: "30px" }} id="inlineRadio3" value="7" onClick={handleChange} />
-                <label className="form-check-label" for="inlineRadio3"></label> Disagree
+                <label className="form-check-label" for="inlineRadio3"></label> 
             </div>
         </div>
     )
