@@ -111,7 +111,8 @@ export default function Signup(props) {
   return (
     <>
       <div
-        className='container flex-column border border-primary border-5'
+        // className='container flex-column border border-primary border-5'
+        className='container flex-column'
         style={{ height: '95vh' }}
       >
         {/* Message d'erreur avec liste des erreurs - FG comment */}
@@ -132,11 +133,14 @@ export default function Signup(props) {
           className='container border border-secondary border-5'
           style={{ height: '100vh' }}
         > */}
-        <div className='row h-100 border border-success border-5 '>
-          <div className='col-8 col-md-6 col-lg-6 align-self-center border border-danger border-5 mx-auto'>
+        {/* <div className='row h-100 border border-success border-5 '> */}
+        <div className='row h-100  '>
+          {/* <div className='col-8 col-md-6 col-lg-6 align-self-center border border-danger border-5 mx-auto'> */}
+          <div className='col-8 col-md-6 col-lg-6 align-self-center mx-auto'>
             {/* <div className=' '> */}
             <h1 className='text-center mt-5'>CQ Test</h1>
-            <div className='align-self-center border-warning border border-5 m-5 mx-auto'>
+            {/* <div className='align-self-center border-warning border border-5 m-5 mx-auto'> */}
+            <div className='align-self-center m-5 mx-auto'>
               <div className='form-floating '>
                 <input
                   placeholder='Name'
@@ -208,7 +212,7 @@ export default function Signup(props) {
                   className='btn btn-primary p-3 '
                   onClick={(e) => signup(e)}
                 >
-                  create an account
+                  Inscription
                 </button>
               </div>
             </div>

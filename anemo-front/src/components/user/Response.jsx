@@ -12,7 +12,7 @@ export default function Response(props) {
   };
 
   return (
-    <div className='d-flex justify-content-center'>
+    <div className='d-flex justify-content-center my-3'>
       <div className='form-check form-check-inline '>
         <input
           // type='Agree'

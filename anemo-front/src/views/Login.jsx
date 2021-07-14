@@ -87,13 +87,17 @@ const Login = (props) => {
 
       {/* Affichage Login - FG comment */}
       <div
-        className='container border border-primary border-5'
+        // className='container border border-primary border-5'
+        className='container'
         style={{ height: '95vh' }}
       >
-        <div className='row h-100 justify-content-center border border-success border-5'>
-          <div className='col-8 col-md-6 col-lg-6 border border-danger border-5 align-self-center'>
+        {/* <div className='row h-100 justify-content-center border border-success border-5'> */}
+        <div className='row h-100 justify-content-center'>
+          {/* <div className='col-8 col-md-6 col-lg-6 border border-danger border-5 align-self-center'> */}
+          <div className='col-8 col-md-6 col-lg-6 align-self-center'>
             <h1 className='text-center mt-5'>CQ Test</h1>
-            <div className='border-warning border border-5 m-5 '>
+            {/* <div className='border-warning border border-5 m-5 '> */}
+            <div className=' m-5 '>
               {/* Code originel - FG comment */}
 
               {/* <div className='mb-3 row'>
@@ -118,7 +122,7 @@ const Login = (props) => {
                   id='email'
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <label htmlFor='email' className='col-sm-4 col-form-label'>
+                <label htmlFor='email' className='col col-form-label'>
                   Adresse email
                 </label>
               </div>

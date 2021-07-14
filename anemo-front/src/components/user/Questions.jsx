@@ -77,39 +77,49 @@ const Questions = (props) => {
           {' '}
           CQ TEST
         </h1> */}
-        {/* <div> */}
-        <ol>
-          {/* <div
+        <div className='container  '>
+          {/* <ol className='row flex-column col-10 col-md-8 col-lg-8 border border-success border-5 mx-auto pe-2'> */}
+          <div className='row flex-column col-10 col-md-8 col-lg-8 mt-3 mx-auto pe-2'>
+            {/* <div
             style={{
               listStyle: 'none',
               textAlign: 'start',
               marginTop: '60px',
             }}
           > */}
-          {questions.map((elem) => {
-            return (
-              <div className='card-title'>
-                <li>{elem.questionText}</li>
-                <Response
-                  // className='align-items-center'
-                  questionsId={elem._id}
-                  onChange={onChangeResponse}
-                />
-              </div>
-            );
-          })}
-          {/* </div> */}
-          <div class='d-grid gap-2 d-md-flex justify-content-md-end'>
-            <button
-              style={{ paddingLeft: '40px', paddingRight: '40px' }}
-              class='btn btn-primary btn-lg'
-              onClick={postSend}
-            >
-              save
-            </button>
+            {questions.map((elem) => {
+              return (
+                <div className='border mx-auto my-2'>
+                  <li
+                    className='border-5 my-2'
+                    style={{ backgroundColor: '##dfe1e6' }}
+                  >
+                    {elem.questionText}
+                  </li>
+                  <Response
+                    // className='align-items-center'
+                    questionsId={elem._id}
+                    onChange={onChangeResponse}
+                    // className='border border-info border-5'
+                  />
+                </div>
+              );
+            })}
+            {/* </div> */}
+            <div class=' d-flex justify-content-center p-5  '>
+              <button
+                style={{
+                  paddingLeft: '40px',
+                  paddingRight: '40px',
+                }}
+                class='btn btn-lg border border-1 border-secondary'
+                onClick={postSend}
+              >
+                Enregistrer
+              </button>
+            </div>
           </div>
-        </ol>
-        {/* </div> */}
+        </div>
       </>
     );
   } else {
@@ -137,7 +147,7 @@ const Questions = (props) => {
           {' '}
           CQ TEST
         </h1> */}
-        <ul>
+        {/* <ol>
           <div
           // style={{
           //   listStyle: 'none',
@@ -168,11 +178,54 @@ const Questions = (props) => {
                 class='btn btn-primary btn-lg'
                 onClick={postSend}
               >
-                save
+                Enregistrer
               </button>
             </div>
           </div>
-        </ul>
+        </ol> */}
+        <div className='container  '>
+          {/* <ol className='row flex-column col-10 col-md-8 col-lg-8 border border-success border-5 mx-auto pe-2'> */}
+          <div className='row flex-column col-10 col-md-8 col-lg-8 mt-3 mx-auto pe-2'>
+            {/* <div
+            style={{
+              listStyle: 'none',
+              textAlign: 'start',
+              marginTop: '60px',
+            }}
+          > */}
+            {questions.map((elem) => {
+              return (
+                <div className='border mx-auto my-2'>
+                  <li
+                    className='border-5 my-2'
+                    style={{ backgroundColor: '##dfe1e6' }}
+                  >
+                    {elem.questionText}
+                  </li>
+                  <Response
+                    // className='align-items-center'
+                    questionsId={elem._id}
+                    onChange={onChangeResponse}
+                    // className='border border-info border-5'
+                  />
+                </div>
+              );
+            })}
+            {/* </div> */}
+            <div class=' d-flex justify-content-center p-5  '>
+              <button
+                style={{
+                  paddingLeft: '40px',
+                  paddingRight: '40px',
+                }}
+                class='btn btn-lg border border-1 border-secondary'
+                onClick={postSend}
+              >
+                Enregistrer
+              </button>
+            </div>
+          </div>
+        </div>
         )
       </>
     );
