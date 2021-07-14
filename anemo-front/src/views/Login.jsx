@@ -87,11 +87,11 @@ const Login = (props) => {
 
       {/* Affichage Login - FG comment */}
       <div
-        className='container border border-secondary border-5'
-        style={{ height: '100vh' }}
+        className='container border border-primary border-5'
+        style={{ height: '95vh' }}
       >
         <div className='row h-100 justify-content-center border border-success border-5'>
-          <div className='col-10 col-md-8 col-lg-6 border border-danger border-5 align-self-center'>
+          <div className='col-8 col-md-6 col-lg-6 border border-danger border-5 align-self-center'>
             <h1 className='text-center mt-5'>CQ Test</h1>
             <div className='border-warning border border-5 m-5 '>
               {/* Code originel - FG comment */}
@@ -118,8 +118,8 @@ const Login = (props) => {
                   id='email'
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <label htmlFor='email' className='col-sm-2 col-form-label'>
-                  Email
+                <label htmlFor='email' className='col-sm-4 col-form-label'>
+                  Adresse email
                 </label>
               </div>
 
@@ -150,7 +150,7 @@ const Login = (props) => {
                   id='InputPassword'
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <label htmlFor='inputPassword'>Password</label>
+                <label htmlFor='inputPassword'>Mot de passe</label>
                 <div className='col-sm-10'></div>
               </div>
 
@@ -172,7 +172,7 @@ const Login = (props) => {
                   className='btn btn-primary p-3 '
                   onClick={(e) => login(e)}
                 >
-                  Login
+                  Connexion
                 </button>
               </div>
             </div>

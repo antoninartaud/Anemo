@@ -43,20 +43,19 @@ function App() {
           {/* class navbar-nav where all the links go */}
           <div className='navbar-nav ms-auto'>
             <Link className='nav-link ' to='/'>
-              Signup
+              Inscription
             </Link>
             <Link className='nav-link' to='/login'>
-              Login
+              Connexion
             </Link>
             <a className='nav-link' href='/' onClick={logout}>
-              Logout
+              Déconnexion
             </a>
+            <Link className='d-none' to='/user'></Link>
+            <Link className='d-none' to='/admin'></Link>
           </div>
         </div>
       </nav>
-
-      <Link to='/user'></Link>
-      <Link to='/admin'></Link>
 
       {/* FG lines comment */}
 

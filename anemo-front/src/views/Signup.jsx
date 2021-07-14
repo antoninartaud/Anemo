@@ -111,8 +111,8 @@ export default function Signup(props) {
   return (
     <>
       <div
-        className='container border border-primary border-5'
-        style={{ height: '100vh' }}
+        className='container flex-column border border-primary border-5'
+        style={{ height: '95vh' }}
       >
         {/* Message d'erreur avec liste des erreurs - FG comment */}
         <div className='row '>
@@ -128,93 +128,95 @@ export default function Signup(props) {
         </div>
 
         {/* Affichage SignUP Form - FG comment*/}
-        <div
+        {/* <div
           className='container border border-secondary border-5'
           style={{ height: '100vh' }}
-        >
-          <div className='row h-100 justify-content-center border border-success border-5'>
-            <div className='col-10 col-md-8 col-lg-6 border border-danger border-5 align-self-center'>
-              <h1 className='text-center mt-5'>CQ Test</h1>
-              <div className='border-warning border border-5 m-5 '>
-                <div className='form-floating'>
-                  <input
-                    placeholder='Name'
-                    type='text'
-                    className='form-control my-3'
-                    id='name'
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                  <label
-                    htmlFor='firstName'
-                    // className='col-sm-2 col-form-label'
-                  >
-                    {/* {' '} */}
-                    Name
-                  </label>
-                  {/* <div className='col-sm-10'> */}
-                  {/* </div> */}
-                </div>
-                <div className='form-floating'>
-                  <input
-                    placeholder='Email'
-                    type='email'
-                    className='form-control my-3'
-                    id='email'
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <label htmlFor='email' className='col-sm-2 col-form-label'>
-                    Email
-                  </label>
-                  {/* <div className='col-sm-10'> */}
-                  {/* </div> */}
-                </div>
-                <div className='form-floating '>
-                  <input
-                    placeholder='Password'
-                    type='password'
-                    className='form-control my-3'
-                    id='inputPassword'
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <label
-                    htmlFor='inputPassword'
-                    // className='col-sm-2 col-form-label'
-                  >
-                    Password
-                  </label>
-                  <div className='col-sm-10'></div>
-                </div>
-                <div className='form-floating'>
-                  <input
-                    placeholder='Confirm Password'
-                    type='password'
-                    className='form-control my-3'
-                    id='inputConfirmPassword'
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                  />
-                  <label
-                    htmlFor='inputConfirmPassword'
-                    // className='col-sm-2 col-form-label' FG COMMENTS
-                  >
-                    Confirm Password
-                  </label>
-                  {/* <div className='col-sm-10'> FG COMMENTS*/}
-                  {/* </div> */}
-                </div>
-                <div className=' m-5 row justify-content-end'>
-                  <button
-                    type='submit'
-                    className='btn btn-primary p-3 '
-                    onClick={(e) => signup(e)}
-                  >
-                    create an account
-                  </button>
-                </div>
+        > */}
+        <div className='row h-100 border border-success border-5 '>
+          <div className='col-8 col-md-6 col-lg-6 align-self-center border border-danger border-5 mx-auto'>
+            {/* <div className=' '> */}
+            <h1 className='text-center mt-5'>CQ Test</h1>
+            <div className='align-self-center border-warning border border-5 m-5 mx-auto'>
+              <div className='form-floating '>
+                <input
+                  placeholder='Name'
+                  type='text'
+                  className='form-control my-3'
+                  id='name'
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <label
+                  htmlFor='firstName'
+                  // className='col-sm-2 col-form-label'
+                >
+                  {/* {' '} */}
+                  Nom
+                </label>
+                {/* <div className='col-sm-10'> */}
+                {/* </div> */}
+              </div>
+              <div className='form-floating'>
+                <input
+                  placeholder='Email'
+                  type='email'
+                  className='form-control my-3'
+                  id='email'
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <label htmlFor='email' className='col-sm-4 col-form-label'>
+                  Adresse email
+                </label>
+                {/* <div className='col-sm-10'> */}
+                {/* </div> */}
+              </div>
+              <div className='form-floating '>
+                <input
+                  placeholder='Password'
+                  type='password'
+                  className='form-control my-3'
+                  id='inputPassword'
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <label
+                  htmlFor='inputPassword'
+                  // className='col-sm-2 col-form-label'
+                >
+                  Mode de passe
+                </label>
+                <div className='col-sm-10'></div>
+              </div>
+              <div className='form-floating'>
+                <input
+                  placeholder='Confirm Password'
+                  type='password'
+                  className='form-control my-3'
+                  id='inputConfirmPassword'
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+                <label
+                  htmlFor='inputConfirmPassword'
+                  // className='col-sm-2 col-form-label' FG COMMENTS
+                >
+                  Confirmation mot de passe
+                </label>
+                {/* <div className='col-sm-10'> FG COMMENTS*/}
+                {/* </div> */}
+              </div>
+              <div className=' m-5 row justify-content-center'>
+                <button
+                  type='submit'
+                  className='btn btn-primary p-3 '
+                  onClick={(e) => signup(e)}
+                >
+                  create an account
+                </button>
               </div>
             </div>
+            {/* </div> */}
           </div>
         </div>
       </div>
+      {/* </div> */}
     </>
   );
   // }

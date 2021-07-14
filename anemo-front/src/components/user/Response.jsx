@@ -12,10 +12,10 @@ export default function Response(props) {
   };
 
   return (
-    <div>
-      <div className='form-check form-check-inline'>
+    <div className='d-flex justify-content-center'>
+      <div className='form-check form-check-inline '>
         <input
-          type='Agree'
+          // type='Agree'
           className='form-check-input'
           type='radio'
           name={props.questionsId}

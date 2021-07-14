@@ -61,13 +61,13 @@ const Questions = (props) => {
     }
   }, []);
 
-  console.log('question', questions);
-  console.log('errors', errors);
+  // console.log('question', questions);
+  // console.log('errors', errors);
 
   if (errors.length === 0) {
     return (
-      <div>
-        <h1
+      <>
+        {/* <h1
           style={{
             textAlign: 'center',
             marginTop: '5px',
@@ -76,40 +76,41 @@ const Questions = (props) => {
         >
           {' '}
           CQ TEST
-        </h1>
-        <div>
-          <ul>
-            <div
-              style={{
-                listStyle: 'none',
-                textAlign: 'center',
-                marginTop: '10px',
-              }}
+        </h1> */}
+        {/* <div> */}
+        <ol>
+          {/* <div
+            style={{
+              listStyle: 'none',
+              textAlign: 'start',
+              marginTop: '60px',
+            }}
+          > */}
+          {questions.map((elem) => {
+            return (
+              <div className='card-title'>
+                <li>{elem.questionText}</li>
+                <Response
+                  // className='align-items-center'
+                  questionsId={elem._id}
+                  onChange={onChangeResponse}
+                />
+              </div>
+            );
+          })}
+          {/* </div> */}
+          <div class='d-grid gap-2 d-md-flex justify-content-md-end'>
+            <button
+              style={{ paddingLeft: '40px', paddingRight: '40px' }}
+              class='btn btn-primary btn-lg'
+              onClick={postSend}
             >
-              {questions.map((elem) => {
-                return (
-                  <div className='card-title'>
-                    <li>{elem.questionText}</li>
-                    <Response
-                      questionsId={elem._id}
-                      onChange={onChangeResponse}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-            <div class='d-grid gap-2 d-md-flex justify-content-md-end'>
-              <button
-                style={{ paddingLeft: '40px', paddingRight: '40px' }}
-                class='btn btn-primary btn-lg'
-                onClick={postSend}
-              >
-                save
-              </button>
-            </div>
-          </ul>
-        </div>
-      </div>
+              save
+            </button>
+          </div>
+        </ol>
+        {/* </div> */}
+      </>
     );
   } else {
     return (
@@ -126,7 +127,7 @@ const Questions = (props) => {
             })}
           </div>
         </div>
-        <h1
+        {/* <h1
           style={{
             textAlign: 'center',
             marginTop: '5px',
@@ -135,23 +136,23 @@ const Questions = (props) => {
         >
           {' '}
           CQ TEST
-        </h1>
+        </h1> */}
         <ul>
           <div
-            style={{
-              listStyle: 'none',
-              textAlign: 'center',
-              marginTop: '10px',
-            }}
+          // style={{
+          //   listStyle: 'none',
+          //   textAlign: 'center',
+          //   marginTop: '10px',
+          // }}
           >
             {questions.map((elem) => {
               return (
                 <div
-                  style={{
-                    listStyle: 'none',
-                    textAlign: 'start',
-                    marginTop: '10px',
-                  }}
+                // style={{
+                //   listStyle: 'none',
+                //   textAlign: 'start',
+                //   marginTop: '10px',
+                // }}
                 >
                   <li>{elem.questionText}</li>
                   <Response
