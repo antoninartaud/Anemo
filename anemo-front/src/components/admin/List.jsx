@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getQuestionList, deleteQuestion } from '../../utils/network';
+import { Link } from 'react-router-dom';
 import Icons from './cors/Icons';
 import Questions from './cors/Questions';
 
@@ -12,7 +13,7 @@ function List() {
   useEffect(async () => {
     try {
       const responseArrayQuestions = await getQuestionList();
-      console.log("response get question",responseArrayQuestions)
+      console.log('response get question', responseArrayQuestions);
       if (responseArrayQuestions) {
         setQuestions(responseArrayQuestions.questionList);
       } else {
@@ -36,13 +37,33 @@ function List() {
 
   const renderConfirmation = () => {
     return (
-      <>
-        <h4>Confirmation render</h4>
-        <button onClick={() => handleClickDeleteRequest(confirmationId)}>
-          OUI
-        </button>
-        <button onClick={() => setConfirmationId('')}>NON</button>
-      </>
+      <div className='container'>
+        <div className='row flex-column '>
+          <div
+            className='d-flex justify-content-center '
+            style={{
+              marginTop: '200px',
+              backgroundColor: '#EAEEF2',
+            }}
+          >
+            <h2 className='my-4'>Suppression de la question ?</h2>
+            <div className='my-3 ' style={{ marginLeft: '70px' }}>
+              <button
+                className='btn btn-primary btn-lg mx-4'
+                onClick={() => handleClickDeleteRequest(confirmationId)}
+              >
+                OUI
+              </button>
+              <button
+                className='btn btn-primary btn-lg mx-4 '
+                onClick={() => setConfirmationId('')}
+              >
+                NON
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   };
 
@@ -52,10 +73,20 @@ function List() {
         {confirmationId ? (
           renderConfirmation()
         ) : (
-          <div className='row'>
+          <div className='row '>
+            <div className='pb-5 d-flex justify-content-center '>
+              <Link to='/add'>
+                <button className='mt-5 ms-4 btn btn-lg btn-primary '>
+                  Ajouter une question
+                </button>
+              </Link>
+            </div>
             <div>
               {questions.map((elem, index) => (
-                <div>
+                <div
+                  className='d-flex border bg m-2'
+                  style={{ backgroundColor: '#eaeef2' }}
+                >
                   <Questions question={elem} />
                   <Icons
                     questionId={elem._id}
