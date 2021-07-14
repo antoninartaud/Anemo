@@ -5,13 +5,19 @@ import List from '../components/admin/List';
 
 function Admin() {
   return (
-    <div>
-      <h3>Admin</h3>
-      <Link to='/add'>
-        <button>Add</button>
-      </Link>
-      <List />
-    </div>
+    <>
+      <div className='d-flex flex-column '>
+        <div className='mx-auto my-5'>
+          <h1 className='mt-5 text-center'>Questionnaire</h1>
+          <Link to='/add'>
+            <button className='mt-5 ms-5'>Ajouter une question</button>
+          </Link>
+        </div>
+      </div>
+      <div className='d-flex justify-content-center'>
+        <List />
+      </div>
+    </>
   );
 }
 

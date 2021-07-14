@@ -12,7 +12,7 @@ function List() {
   useEffect(async () => {
     try {
       const responseArrayQuestions = await getQuestionList();
-      console.log("response get question",responseArrayQuestions)
+      console.log('response get question', responseArrayQuestions);
       if (responseArrayQuestions) {
         setQuestions(responseArrayQuestions.questionList);
       } else {
@@ -55,7 +55,10 @@ function List() {
           <div className='row'>
             <div>
               {questions.map((elem, index) => (
-                <div>
+                <div
+                  className='d-flex border bg m-2'
+                  style={{ backgroundColor: '#eaeef2' }}
+                >
                   <Questions question={elem} />
                   <Icons
                     questionId={elem._id}
