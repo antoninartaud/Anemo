@@ -112,7 +112,7 @@ const Questions = (props) => {
                   paddingLeft: '40px',
                   paddingRight: '40px',
                 }}
-                class='btn btn-lg border border-1 border-secondary'
+                class='btn btn-primary btn-lg border border-1 border-secondary'
                 onClick={postSend}
               >
                 Enregistrer
@@ -218,7 +218,7 @@ const Questions = (props) => {
                   paddingLeft: '40px',
                   paddingRight: '40px',
                 }}
-                class='btn btn-lg border border-1 border-secondary'
+                class='btn btn-primary btn-lg border border-1 '
                 onClick={postSend}
               >
                 Enregistrer
