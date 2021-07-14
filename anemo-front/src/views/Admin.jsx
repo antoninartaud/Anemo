@@ -8,7 +8,7 @@ function Admin() {
     <>
       <div className='d-flex flex-column '>
         <div className='mx-auto my-5'>
-          <h1 className='mt-5 text-center'>Questionnaire</h1>
+          <h1 className='mt-3 text-center'>Questionnaire</h1>
           <Link to='/add'>
             <button className='mt-5 ms-5'>Ajouter une question</button>
           </Link>
