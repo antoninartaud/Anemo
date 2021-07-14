@@ -22,11 +22,19 @@ export default function UserPage() {
     );
   } else {
     return (
-      <div>
-        <h1 style={{ textAlign: 'center', marginTop: '150px' }}>
-          {' '}
-          Vos réponses ont été enregistrées
-        </h1>
+      <div className='container'>
+        <div className='row justify-content-center'>
+          <h1
+            className='col-6 py-4'
+            style={{
+              textAlign: 'center',
+              marginTop: '150px',
+              backgroundColor: '#EAEEF2',
+            }}
+          >
+            Réponses sauvegardées
+          </h1>
+        </div>
       </div>
     );
   }

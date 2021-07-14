@@ -33,23 +33,23 @@ export default function Signup(props) {
     const regexEmail =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!regexEmail.test(email.toLowerCase())) {
-      errors.push('Email is not valid');
+      errors.push("Votre adresse email n'est pas valide");
     }
 
     if (password !== confirmPassword) {
-      errors.push('Passwords are not the same');
+      errors.push('Les mots de passe sont différents');
     }
 
     const regexPassword =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{4,30}$/;
     if (!regexPassword.test(password)) {
       errors.push(
-        'Passwords must have 4 characters, 1 number, 1 upper, 1 special character and 1 lowercase'
+        'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre , une majuscule , et un caractère spécial'
       );
     }
 
     if (name === '') {
-      errors.push('Please enter First Name');
+      errors.push('Le nom est nécessaire');
     }
 
     return errors;

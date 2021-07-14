@@ -36,9 +36,7 @@ const Questions = (props) => {
         console.log(listResponse);
         props.finishCq(true);
       } else {
-        setErrors([
-          "    vous n'avez pas fini de repondre à toute les questions",
-        ]);
+        setErrors(['Une réponse à toutes les questions est nécessaire']);
       }
     } catch (error) {
       console.error(error);
@@ -92,7 +90,7 @@ const Questions = (props) => {
                 <div className='border mx-auto my-2'>
                   <li
                     className='border-5 my-2'
-                    style={{ backgroundColor: '##dfe1e6' }}
+                    style={{ backgroundColor: '#dfe1e6' }}
                   >
                     {elem.questionText}
                   </li>

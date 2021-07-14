@@ -28,14 +28,14 @@ const Login = (props) => {
     const regexEmail =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!regexEmail.test(email.toLowerCase())) {
-      errors.push('Email is not valid');
+      errors.push("Votre adresse email n'est pas valide");
     }
 
     const regexPassword =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{4,30}$/;
     if (!regexPassword.test(password)) {
       errors.push(
-        'Passwords must have  4 characters, 1 number, 1 upper , 1 special character  and 1 lowercase'
+        'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre , une majuscule , et un caractère spécial'
       );
     }
 
@@ -95,7 +95,7 @@ const Login = (props) => {
         <div className='row h-100 justify-content-center'>
           {/* <div className='col-8 col-md-6 col-lg-6 border border-danger border-5 align-self-center'> */}
           <div className='col-8 col-md-6 col-lg-6 align-self-center'>
-            <h1 className='text-center mt-5'>CQ Test</h1>
+            <h1 className='text-center mt-5 '>CQ Test</h1>
             {/* <div className='border-warning border border-5 m-5 '> */}
             <div className=' m-5 '>
               {/* Code originel - FG comment */}
