@@ -13,12 +13,11 @@ function Edit() {
   };
 
   const { id } = useParams();
-  console.log('id', id);
+  
 
   useEffect(async () => {
     try {
       const responseQuestion = await getQuestion(id);
-      console.log(responseQuestion);
 
       if (responseQuestion) {
         setQuestion(responseQuestion.question);
@@ -59,16 +58,14 @@ function Edit() {
             style={{ marginTop: '200px' }}
           >
             <form className='edit-form mx-auto' onSubmit={handleSubmit}>
-              {/* onSubmit={ } Création fonction qui déclenche sendQuestion requête post...prévoir e.prevetnDefault */}
-              {/* <label for='questionText'>Question</label> */}
+              
               <input
                 style={{ width: '600px', height: '90px' }}
-                id='questionText' //Pour lier avec label className='form-field'
+                id='questionText' 
                 type='text'
                 placeholder='Question'
                 name='questionText'
                 value={newQuestion}
-                // value={Object.keys(question).length === 0 ? null : newQuestion}
                 onChange={(e) => handleQuestionInputChange(e)}
               ></input>
 

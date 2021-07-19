@@ -7,13 +7,11 @@ import Questions from './cors/Questions';
 function List() {
   const [questions, setQuestions] = useState([]);
 
-  //display Confirmation deleted question and store the question ID
   const [confirmationId, setConfirmationId] = useState('');
 
   useEffect(async () => {
     try {
       const responseArrayQuestions = await getQuestionList();
-      console.log('response get question', responseArrayQuestions);
       if (responseArrayQuestions) {
         setQuestions(responseArrayQuestions.questionList);
       } else {

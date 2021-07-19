@@ -22,7 +22,7 @@ function Add() {
     }
   };
 
-  console.log('newQuestion state on add.jsx', newQuestion);
+  
 
   return (
     <div className='container vh-90'>

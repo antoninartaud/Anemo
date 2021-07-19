@@ -44,7 +44,7 @@ export default function Signup(props) {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{4,30}$/;
     if (!regexPassword.test(password)) {
       errors.push(
-        'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre , une majuscule , et un caractère spécial'
+        'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre , une majuscule  et un caractère spécial'
       );
     }
 
@@ -79,7 +79,6 @@ export default function Signup(props) {
           localStorage.setItem('role', role);
           props.changeUserConnected(true);
           console.log('role');
-          // setUserCreated(true)
           const roleUser = localStorage.getItem('role');
 
           if (roleUser === '0') {
@@ -100,22 +99,14 @@ export default function Signup(props) {
     }
   };
 
-  // if (userCreated) {
-  //     return (
-  //         <div>
-  //             <h1 style={{ textAlign: 'center', fontFamily: 'fantasy', marginTop: '150px' }}> User Created!</h1>
-  //         </div>
-  //     )
-  // } else {
+
 
   return (
     <>
       <div
-        // className='container flex-column border border-primary border-5'
         className='container flex-column'
         style={{ height: '95vh' }}
       >
-        {/* Message d'erreur avec liste des erreurs - FG comment */}
         <div className='row '>
           <div className='offset-3 col-6 mx-auto '>
             {formErrors.map((elem) => {
@@ -128,18 +119,10 @@ export default function Signup(props) {
           </div>
         </div>
 
-        {/* Affichage SignUP Form - FG comment*/}
-        {/* <div
-          className='container border border-secondary border-5'
-          style={{ height: '100vh' }}
-        > */}
-        {/* <div className='row h-100 border border-success border-5 '> */}
+
         <div className='row h-100  '>
-          {/* <div className='col-8 col-md-6 col-lg-6 align-self-center border border-danger border-5 mx-auto'> */}
           <div className='col-8 col-md-6 col-lg-6 align-self-center mx-auto'>
-            {/* <div className=' '> */}
             <h1 className='text-center mt-5'>CQ Test</h1>
-            {/* <div className='align-self-center border-warning border border-5 m-5 mx-auto'> */}
             <div className='align-self-center m-5 mx-auto'>
               <div className='form-floating '>
                 <input
@@ -151,13 +134,9 @@ export default function Signup(props) {
                 />
                 <label
                   htmlFor='firstName'
-                  // className='col-sm-2 col-form-label'
                 >
-                  {/* {' '} */}
                   Nom
                 </label>
-                {/* <div className='col-sm-10'> */}
-                {/* </div> */}
               </div>
               <div className='form-floating'>
                 <input
@@ -170,8 +149,7 @@ export default function Signup(props) {
                 <label htmlFor='email' className='col-sm-4 col-form-label'>
                   Adresse email
                 </label>
-                {/* <div className='col-sm-10'> */}
-                {/* </div> */}
+
               </div>
               <div className='form-floating '>
                 <input
@@ -183,7 +161,6 @@ export default function Signup(props) {
                 />
                 <label
                   htmlFor='inputPassword'
-                  // className='col-sm-2 col-form-label'
                 >
                   Mode de passe
                 </label>
@@ -199,12 +176,10 @@ export default function Signup(props) {
                 />
                 <label
                   htmlFor='inputConfirmPassword'
-                  // className='col-sm-2 col-form-label' FG COMMENTS
                 >
                   Confirmation mot de passe
                 </label>
-                {/* <div className='col-sm-10'> FG COMMENTS*/}
-                {/* </div> */}
+
               </div>
               <div className=' m-5 row justify-content-center'>
                 <button
@@ -216,12 +191,9 @@ export default function Signup(props) {
                 </button>
               </div>
             </div>
-            {/* </div> */}
           </div>
         </div>
       </div>
-      {/* </div> */}
     </>
   );
-  // }
 }

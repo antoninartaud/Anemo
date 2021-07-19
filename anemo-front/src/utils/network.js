@@ -26,20 +26,7 @@ export const postLogin = async (body) => {
   }
 }
 
-// export const getQuestionList = async () => {
-//   try {
-//     const response = await axios.get(`${API_URL}/`);
-//     // console.log('response in network.js', response);
-//     console.log('response.data', response.data);
 
-//     return response.data;
-//   } catch (error) {
-//     console.error(error);
-//     return false;
-//   }
-// };
-
-// getQuestion version Mugi
 
 export const getQuestionList = async () => {
   try {
@@ -80,7 +67,7 @@ export const updateQuestion = async (id, body) => {
   try {
     const token = localStorage.getItem("token")
 
-    await axios.patch(`${API_URL}/${id}`, body,{ headers: { Authorization: `Bearer ${token}` } });
+    await axios.patch(`${API_URL}/${id}`, body, { headers: { Authorization: `Bearer ${token}` } });
   } catch (error) {
     console.error(error);
     return false;
@@ -90,7 +77,7 @@ export const updateQuestion = async (id, body) => {
 export const addQuestion = async (body) => {
   try {
     const token = localStorage.getItem("token")
-    await axios.post(`${API_URL}/`, body,{ headers: { Authorization: `Bearer ${token}` } });
+    await axios.post(`${API_URL}/`, body, { headers: { Authorization: `Bearer ${token}` } });
   } catch (error) {
     console.error(error);
     return false;
@@ -100,7 +87,7 @@ export const addQuestion = async (body) => {
 export const deleteQuestion = async (id) => {
   try {
     const token = localStorage.getItem("token")
-    const response = await axios.delete(`${API_URL}/${id}`,{ headers: { Authorization: `Bearer ${token}` } });
+    const response = await axios.delete(`${API_URL}/${id}`, { headers: { Authorization: `Bearer ${token}` } });
     return response.data;
   } catch (error) {
     console.error(error);

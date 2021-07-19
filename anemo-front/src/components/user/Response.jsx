@@ -2,20 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 export default function Response(props) {
   const handleChange = (e) => {
-    console.log('e.target.value', e.target.value);
-    console.log('e.target.name', e.target.name);
     const value = e.target.value;
     const id = e.target.name;
 
     props.onChange(id, value);
-    console.log(props);
   };
 
   return (
     <div className='d-flex justify-content-center my-3'>
       <div className='form-check form-check-inline '>
         <input
-          // type='Agree'
           className='form-check-input'
           type='radio'
           name={props.questionsId}

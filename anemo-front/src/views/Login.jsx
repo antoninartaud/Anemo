@@ -35,7 +35,7 @@ const Login = (props) => {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{4,30}$/;
     if (!regexPassword.test(password)) {
       errors.push(
-        'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre , une majuscule , et un caractère spécial'
+        'Le mot de passe doit contenir au moins 8 caractères dont 1 chiffre , une majuscule  et un caractère spécial'
       );
     }
 
@@ -85,34 +85,18 @@ const Login = (props) => {
         </div>
       </div>
 
-      {/* Affichage Login - FG comment */}
+      
       <div
-        // className='container border border-primary border-5'
+        
         className='container'
         style={{ height: '95vh' }}
       >
-        {/* <div className='row h-100 justify-content-center border border-success border-5'> */}
         <div className='row h-100 justify-content-center'>
-          {/* <div className='col-8 col-md-6 col-lg-6 border border-danger border-5 align-self-center'> */}
           <div className='col-8 col-md-6 col-lg-6 align-self-center'>
             <h1 className='text-center mt-5 '>CQ Test</h1>
-            {/* <div className='border-warning border border-5 m-5 '> */}
             <div className=' m-5 '>
-              {/* Code originel - FG comment */}
 
-              {/* <div className='mb-3 row'>
-                <label htmlFor='email' className='col-sm-2 col-form-label'>
-                  Email
-                </label>
-                <div className='col-sm-10'>
-                  <input
-                    type='text'
-                    className='form-control'
-                    id='email'
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-              </div> */}
+              
 
               <div className='form-floating'>
                 <input
@@ -127,24 +111,7 @@ const Login = (props) => {
                 </label>
               </div>
 
-              {/* Code originel - FG comment */}
-
-              {/* <div className='mb-3 row'>
-                <label
-                  htmlFor='inputPassword'
-                  className='col-sm-2 col-form-label'
-                >
-                  Password
-                </label>
-                <div className='col-sm-10'>
-                  <input
-                    type='password'
-                    className='form-control'
-                    id='inputPassword'
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-              </div> */}
+              
 
               <div className='form-floating '>
                 <input
@@ -158,17 +125,7 @@ const Login = (props) => {
                 <div className='col-sm-10'></div>
               </div>
 
-              {/* Code originel - FG comment */}
-
-              {/* <div className='mb-3 row'>
-                <button
-                  type='submit'
-                  className='btn btn-primary mb-3 col-sm-8 offset-3  '
-                  onClick={login}
-                >
-                  Login
-                </button>
-              </div> */}
+              
 
               <div className=' m-5 row justify-content-end'>
                 <button

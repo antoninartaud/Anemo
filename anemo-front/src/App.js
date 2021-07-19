@@ -38,9 +38,7 @@ function App() {
   return (
     <BrowserRouter>
       <nav className='navbar navbar-expand-md bg-secondary navbar-dark'>
-        {/* class container to align the text inside the navbar to the grid */}
         <div className='container'>
-          {/* class navbar-nav where all the links go */}
           <div className='navbar-nav ms-auto'>
             <Link className='nav-link ' to='/'>
               Inscription
@@ -57,14 +55,7 @@ function App() {
         </div>
       </nav>
 
-      {/* FG lines comment */}
-
-      {/* <li className="nav-item"> */}
-      {/* <a href='/' className='nav-link' onClick={logout}>
-            Logout
-          </a> */}
-      {/* </li> */}
-
+      
       <Switch>
         <Route exact path='/admin' component={Admin} />
         <Route exact path='/edit/:id' component={Edit} />
