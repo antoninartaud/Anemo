@@ -1,17 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 import List from '../components/admin/List';
 
 function Admin() {
   return (
-    <div>
-      <h3>Admin</h3>
-      <Link to='/add'>
-        <button>Add</button>
-      </Link>
-      <List />
-    </div>
+    <>
+
+      <div className='d-flex flex-column '>
+        <div className='mx-auto my-4'>
+          <h1 className='mt-3 text-center'>Questionnaire</h1>
+        </div>
+      </div>
+
+      <div className='d-flex justify-content-center'>
+        <List />
+      </div>
+    </>
   );
 }
 

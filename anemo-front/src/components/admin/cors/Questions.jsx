@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Questions = (props) => {
-  // console.log(props);
   return (
     <>
-      <h4>{props.question.questionText}</h4>
+      <p className='col-8 border'>{props.question.questionText}</p>
     </>
   );
 };
